@@ -9,7 +9,17 @@
     <link rel=stylesheet href="../css-scss/normalize.css">
 </head>
 <body>
-    <h1>Comienza la Practica</h1>
-    <h2>Wilsai Website</h2>
+    <h1>Universal</h1>
+    <h2>De Tipo</h2>
+    <h2 class="title-h2">Por Clase</h2>
+    <h2 myAtributo="title-h2" >Por atributo</h2>
+    <h2 id="title-h2">Por ID</h2>
+    <div [myAtributo]="title-h2" class="descendiente" id="title-h2">
+        <h1>Descendiente</h1>
+        <h2>De Tipo</h2>
+        <h2 class="title2-h2">Por Clase</h2>
+        <h2 myAtributo2="title-h2" >Por atributo</h2>
+        <h2 id="title2-h2">Por ID</h2>
+        </div>
 </body>
 </html>

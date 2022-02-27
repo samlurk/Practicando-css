@@ -1,0 +1,47 @@
+/*<<<<<<TIPOS DE SELECTORES>>>>>>*
+
+<<UNIVERSAL>> Specify(0,0,0)
+
+*{
+    color: rgb(24, 89, 14); 
+}
+
+/*<<DE TIPO>> Specify(0,0,1)
+h2{ 
+    color: red;
+}
+
+/*<<DE CLASE>> Specify(0,1,0)
+.title-h2{ 
+    color:chocolate;
+}
+/*<<POR ATRIBUTO>> Specify(0,1,0)
+[myAtributo]{
+    color:darkred;
+}
+/*<<POR ID>> Specify(1,0,0)
+#title-h2{
+    color: blue;
+}
+
+/*<<POR DESCENDIENTE>>
+
+div h2{ /*Specify(0,0,2)
+    color: darkred;
+}
+.descendiente .title2-h2{ /*Specify(0,2,0)
+    color: chocolate;
+}
+.descendiente [myAtributo2]{ /*Specify(0,2,0)
+    color: red;
+}
+#title-h2 #title2-h2{ /*Specify(0,2,0)
+    color:green;
+}
+/*PSEUDO-CLASES
+
+.descendiente .title2-h2:hover{  /*Specify(0,3,0)
+    color: red;
+}
+
+/*<<<<<<ESPECIFIDAD>>>>>>*/
