@@ -1,4 +1,45 @@
+/*<<<<<<SINTAXIS DE CSS>>>>>>
+
+Selector: El elemento al que vamos aplicar estilos
+Propiedad: Lo que vamos a cambiar
+Valor: el nuevo valor que le vamos a dar la propiedad
+Propiedad: valor -> Se le denomina declaracion
+Al conjunto de selector+declaracion(es) se le denomina regla
+
+Regla:
+selector{ 
+    propiedad:valor; declaracion
+    propiedad2: valor; declaracion2
+}
+
+
 /*<<<<<<TIPOS DE SELECTORES>>>>>>*
+
+~~~Selectores Simples
+        Selectores elementales
+            Selector Universal -> *
+            Selector de tipo o etiquieta -> Nombre de la etiqueta
+        Selectores de atributo
+            id -> id del elemento
+            clase -> clase del elemento
+            otros atributos.
+                [atributo]
+                [atributo="valor"]
+                [atributo^="valor"] Busca coincidencia al principio
+                [atributo*="valor"] Busca coincidencia desde donde sea
+                [atributo$="valor"] Seleccionar el valor si termina por esa palabra
+                [atributo|="valor"] Incluye en y en-, ideal para lang
+~~~Selectores Compuestos
+        Selectores agrupados -> Se agrupan los selectores separados por comas y se escribeel estilo una sola vez
+        Selectores Combinadores
+            Selector descendiente -> Selector mayor Selector menor
+            Selector de Hijos Selector -> Selector padre > Selector Hijos directos
+            Selector de hermano(s) siguiente(s) 
+                Selector para Hermanos siguientes -> Selector Hermano ~ Hermanos Siguientes (descendente html)
+                Selector para Hermano siguiente en descendencia -> Hermano + hermano siguiente (descendente html)
+        Pseudoclases - Pseudoelementos
+
+
 
 <<UNIVERSAL>> Specify(0,0,0)
 
@@ -19,6 +60,11 @@ h2{
 [myAtributo]{
     color:darkred;
 }
+
+[myAtributo^="title"]{ Specify(0,1,0)
+    color: red;
+}
+
 /*<<POR ID>> Specify(1,0,0)
 #title-h2{
     color: blue;
@@ -44,4 +90,124 @@ div h2{ /*Specify(0,0,2)
     color: red;
 }
 
-/*<<<<<<ESPECIFIDAD>>>>>>*/
+/*<<SELECTOR DE HIJOS>>
+.descendiente > .title2-h2{ Specify(0,2,0)
+
+}
+
+
+/*<<<<<<ESPECIFIDAD>>>>>>
+
+/*<<PSEUDO-ELEMENTOS>>
+
+/*<<NIVEL DE JERARQUIA>>
+
+!important 
+
+Estilos en linea
+
+Identificadores
+
+Clases
+
+Pseudo-clases
+
+Atributos
+
+Elementos
+
+pseudo-elementos
+
+    El caculo de especifidad se realiza con la siguiente formula:
+        Etiquetas y pseudo elementos 001
+        Clases, atributos y pseudoclases 010
+        Ids 100
+        Estilos en linea 1000
+        !important 10000
+    Cascada -> Funciona siempre que la especifidad sobre el elemento sea la misma
+    Herencia -> Capacidad que tienen algunos elementos de heredar algunas propiedades de sus elementos contenedores (padres, abuelos, etc)
+*{
+    color: blue !important;
+}
+
+h2{ /*Specify (0,0,1) important
+    color: red !important;
+}
+
+#title2-h2{ /*Specify (1,0,0) important
+    color:violet !important;
+}
+
+#title-h2 #title2-h2{ /*Specify (2,0,0) important
+    color:green !important;
+}
+
+.title2-h2 + [myAtributo2="title-h2"] { /* Specify(0,2,0) Es el hermano siguiente en descendencia
+    background-color: lightgreen;
+}
+
+.title2-h2 ~ [myAtributo2], .title2-h2 ~ #title2-h2{ /*Specify (0,2,0), Specify (1,1,0)
+    background-color: lightskyblue;
+}
+
+body > .title-h2{ /*Specify (0,1,1)
+    background-color:lightslategray;
+}
+/*<<A FONDO>>
+
+
+h2 {
+    color: blue;
+}
+h2.h2-title{ /*Specify (0,1,1)
+    color: green;
+}
+.contenido h2.h2-title{ /*Specify (0,2,1)
+    color: darkred;
+}
+h2#h2-title{/*Specify (1,0,1)
+    color: brown;
+}
+h2.h2-title#h2-title{/*Specify (1,1,1)
+    color: blueviolet;
+}
+
+div h2.h2-title#h2-title{ /*Specify 112 
+    color: #000;
+}
+div.sub-contenido#sub-contenido h2{ /*Specify (1,1,1)
+    color:chartreuse;
+}
+div.sub-contenido#sub-contenido  > h2.h2-title#h2-title:hover{ /*Specify (2,3,2)
+    color:red;
+}
+
+h2.h2-title#h2-title + h2.h2-title#h2-title:hover{/*Specify ()
+    color:blue;
+}
+div.sub-contenido#sub-contenido  h2.h2-title#h2-title:last-of-type:hover::first-letter{
+    color:violet;
+}
+
+/*TENER UN CSS SIN PICOS, LO MAS LINEAL POSIBLE
+
+/*<<<<<<HERENCIA>>>>>>*
+
+~~~ Todos los temas entorno a fuentes y colores, se heredan.
+
+~~~ Los enlaces no heredan propiedades de su padre.
+
+.text{
+    color: red;
+}
+a:link{
+    
+    text-decoration: none;
+    color: inherit; /*La propiedad: inherit es para decir que queremos forzar la herencia, porque, en estos tipos de casos la propiedad no se hereda.
+                    /*La propiedad initial es para decir que queremos que vuelvan a su estado inicial, todo aquello que estes heredando, ignoralo
+}
+
+li:not(.no-color){
+    color: blue;
+}*/
+
