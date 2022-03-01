@@ -211,3 +211,22 @@ li:not(.no-color){
     color: blue;
 }*/
 
+/*<<<<<<ESTILOS COMPUTADOS>>>>>>*/
+
+body{
+    color: rgba(255, 255, 255, 0.679);
+    background-color: rgb(12, 10, 10);
+}
+#title2-h2{
+    color: red;
+}
+#title2-h2{
+    color: lightskyblue;
+}
+a:link{
+    color: inherit;
+}
+/*user agent stylesheet | son estilos del navegador q trae por defecto
+
+~~ Cuando se tenga un problema revisar el DevTools de Google, estilos y computados
+*/
