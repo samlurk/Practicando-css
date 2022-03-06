@@ -1,4 +1,4 @@
-/*<<<<<<SINTAXIS DE CSS>>>>>>
+/**<<<<<<SINTAXIS DE CSS>>>>>>
 
 Selector: El elemento al que vamos aplicar estilos
 Propiedad: Lo que vamos a cambiar
@@ -13,7 +13,7 @@ selector{
 }
 
 
-/*<<<<<<TIPOS DE SELECTORES>>>>>>*
+/**<<<<<<TIPOS DE SELECTORES>>>>>>*
 
 ~~~Selectores Simples
         Selectores elementales
@@ -41,22 +41,22 @@ selector{
 
 
 
-<<UNIVERSAL>> Specify(0,0,0)
+/**<<UNIVERSAL>> Specify(0,0,0)
 
 *{
     color: rgb(24, 89, 14); 
 }
 
-/*<<DE TIPO>> Specify(0,0,1)
+/**<<DE TIPO>> Specify(0,0,1)
 h2{ 
     color: red;
 }
 
-/*<<DE CLASE>> Specify(0,1,0)
+/**<<DE CLASE>> Specify(0,1,0)
 .title-h2{ 
     color:chocolate;
 }
-/*<<POR ATRIBUTO>> Specify(0,1,0)
+/**<<POR ATRIBUTO>> Specify(0,1,0)
 [myAtributo]{
     color:darkred;
 }
@@ -65,12 +65,12 @@ h2{
     color: red;
 }
 
-/*<<POR ID>> Specify(1,0,0)
+/**<<POR ID>> Specify(1,0,0)
 #title-h2{
     color: blue;
 }
 
-/*<<POR DESCENDIENTE>>
+/**<<POR DESCENDIENTE>>
 
 div h2{ /*Specify(0,0,2)
     color: darkred;
@@ -84,23 +84,23 @@ div h2{ /*Specify(0,0,2)
 #title-h2 #title2-h2{ /*Specify(0,2,0)
     color:green;
 }
-/*PSEUDO-CLASES
+/**PSEUDO-CLASES
 
 .descendiente .title2-h2:hover{  /*Specify(0,3,0)
     color: red;
 }
 
-/*<<SELECTOR DE HIJOS>>
+/**<<SELECTOR DE HIJOS>>
 .descendiente > .title2-h2{ Specify(0,2,0)
 
 }
 
 
-/*<<<<<<ESPECIFIDAD>>>>>>
+/**<<<<<<ESPECIFIDAD>>>>>>
 
-/*<<PSEUDO-ELEMENTOS>>
+/**<<PSEUDO-ELEMENTOS>>
 
-/*<<NIVEL DE JERARQUIA>>
+/**<<NIVEL DE JERARQUIA>>
 
 !important 
 
@@ -118,7 +118,7 @@ Elementos
 
 pseudo-elementos
 
-    El caculo de especifidad se realiza con la siguiente formula:
+    **El caculo de especifidad se realiza con la siguiente formula:
         Etiquetas y pseudo elementos 001
         Clases, atributos y pseudoclases 010
         Ids 100
@@ -191,7 +191,7 @@ div.sub-contenido#sub-contenido  h2.h2-title#h2-title:last-of-type:hover::first-
 
 /*TENER UN CSS SIN PICOS, LO MAS LINEAL POSIBLE
 
-/*<<<<<<HERENCIA>>>>>>*
+/**<<<<<<HERENCIA>>>>>>*
 
 ~~~ Todos los temas entorno a fuentes y colores, se heredan.
 
@@ -211,7 +211,7 @@ li:not(.no-color){
     color: blue;
 }*/
 
-/*<<<<<<ESTILOS COMPUTADOS>>>>>>*/
+/**<<<<<<ESTILOS COMPUTADOS>>>>>>*/
 
 body{
     color: rgba(255, 255, 255, 0.679);
@@ -231,15 +231,46 @@ a:link{
 ~~ Cuando se tenga un problema revisar el DevTools de Google, estilos y computados
 */
 
+/**<<<<<<BOX MODEL Y MARGIN >>>>>>*/
+.title{
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto; /*! No se coloca a la derecha porque ocupa el ancho completo*/
+    background-color: blue;
+}
 .block{
     background-color: purple;
     width: 200px;
     height: 200px;
+    /*margin:  100px 50px 25px;*/
+    margin-left: auto; /** Al darle el margen left y right calcula los 2 lados (centra la caja, no el texto)*/
+    margin-right: auto;
 }
+
+/**Con bloques margin-right: auto; el elemento va a la izquierda e inverso a margin-left: auto;
+ Para que esto funcione debe tener un ancho declarado y ser un elemento bloque*/
+
 
 .inline{ /*Los elementos inline el tamaño no determina su contenido*/
     background-color: lightcoral;
     color: inherit;
-    width: 200px; /*no agarra*/
-    height: 200px; /*no agarra*/
+    /*width: 200px; /*! no agarra*/
+    /*height: 200px; /*! no agarra*/
+    /*margin-top: 100px; /* !No agarra margen vertical*/
+    /*margin-left: 200px; /*Agarra margen horizontal*/
 }
+
+/*
+    Es la propiedad que nos permite generar espacio entre elementos 
+    Es un shorthand que controla los 4 lados que dar margenes.
+    margin-top 
+    margin-right
+    margin-bottom
+    margin-left  
+
+    Admite hasta 4 valores que van en el orden de las agujas del reloj
+    4 valores -> margin: top right bottom left;
+    3 valores -> margin: top left/right bottom;
+    2 valores -> margin: top/bottom/ left/right;
+    1 valor -> margin: top/right/bottom/left
+*/
