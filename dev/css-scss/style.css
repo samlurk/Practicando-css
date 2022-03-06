@@ -215,17 +215,15 @@ li:not(.no-color){
 
 body{
     color: rgba(255, 255, 255, 0.679);
-    background-color: #333;
+    /*background-color: #333;*/
 }
-#title2-h2{
+
+/*#title2-h2{
     color: red;
 }
 #title2-h2{
     color: lightskyblue;
-}
-a:link{
-    color: inherit;
-}
+}*/
 /*user agent stylesheet | son estilos del navegador q trae por defecto
 
 ~~ Cuando se tenga un problema revisar el DevTools de Google, estilos y computados
@@ -274,3 +272,36 @@ a:link{
     2 valores -> margin: top/bottom/ left/right;
     1 valor -> margin: top/right/bottom/left
 */
+
+/**<<<<<<<<<<METODOLOGIA BEM Y ORDEN DE ESTILOS EN CSS>>>>>>>>>>>>*/
+.btn{
+    width: 500px;
+    margin: 30px auto 0;
+}
+
+.btn__link{
+    padding: 0.5em 1.1em;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: white;
+    background-color: #305BDF;
+    border-radius: 1em;
+}
+.btn__link--primary:hover{
+    background-color: #466DE2;
+}
+.btn__link--primary:active{
+    background-color: #2251DD;
+}
+.btn__link--secondary{
+    color: #4169E1;
+    background-color: transparent;
+    border: 2px solid #305BDF;
+}
+.btn__link--secondary:hover{
+    color: #193CA3;
+}
+.btn__link--secondary:active{
+    background-color: rgba(48,91,223, 0.15);
+}

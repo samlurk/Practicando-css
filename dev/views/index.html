@@ -44,9 +44,34 @@
             <li ><a  href="#">Enlace 9</a></li>
         </ul> -->
 
-        <h1 class="title">Box Model</h1>
+        <!--<h1 class="title">Box Model</h1>
         <div class="block">Elemento de bloque</div>
-        <!--<a href="#" class="inline">En linea</a>-->
+        <a href="#" class="inline">En linea</a>-->
+        
+        <!--*<<<METODOLOGIA BEM>>>-->
 
+        <!--*BEM (Block, Element, Modifier)
+        
+            Un bloque en BEM, es una entidad independiente, no necesita de nadie mas para existir (Header, Nav, Formulario, Footer, Contenedor)
+            Como nombramos a los bloques?. RE: Se nombra con la funcionalidad del bloque
+        
+            Un elemento en BEM, depende directamente de un bloque, porque este debe estar dentro de un bloque y debe estar ligado a el.
+            Como nombramos a los elementos?. RE: Se les nombra con el nombre de su bloque contenedor con 2 guiones y la descripcion del elemento.
+        
+            Un modificador puede ser un bloque o un elemento, estos indican una modificacion a dicho elemento o bloque.
+            Como nombramos a los modificadores?. RE: Se les nombra con el nombre que tenian anteriormente (bloque o elemento) se le agrega dos guiones medios y la descripcion de la modificacion
+            El modificador viene con un unificador si lo necesita,  ejemplo (--color-gray) es un guion medio
+        
+            Que pasa si tengo un hijo dentro de otro elemento?. RE: Se nombra como otro elemento (Esta permitido en BEM)
+
+            Una una etiqueta puede tener 2 clases de un bloque?. RE: Si, se llama "Mixes" en BEM
+            
+            Se pueden usar modificadores globales como disabled o visible?, RE: No. No lo recomienda porque puede generar especifidad extra. Y lo que queremos con BEM es tener la especifidad al minimo
+        -->
+
+        <div class="btn">
+            <a href="#" class="btn__link btn__link--primary">Primario</a>
+            <a href="#" class="btn__link btn__link--secondary">Secundario</a>
+        </div>
 </body>
 </html>
