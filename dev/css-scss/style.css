@@ -215,7 +215,7 @@ li:not(.no-color){
 
 body{
     color: rgba(255, 255, 255, 0.679);
-    background-color: rgb(12, 10, 10);
+    background-color: #333;
 }
 #title2-h2{
     color: red;
@@ -230,3 +230,16 @@ a:link{
 
 ~~ Cuando se tenga un problema revisar el DevTools de Google, estilos y computados
 */
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+}
+
+.inline{ /*Los elementos inline el tamaño no determina su contenido*/
+    background-color: lightcoral;
+    color: inherit;
+    width: 200px; /*no agarra*/
+    height: 200px; /*no agarra*/
+}
