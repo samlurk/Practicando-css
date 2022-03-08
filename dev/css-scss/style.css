@@ -213,10 +213,10 @@ li:not(.no-color){
 
 /**<<<<<<ESTILOS COMPUTADOS>>>>>>*/
 
-body{
+/*body{
     color: rgba(255, 255, 255, 0.679);
-    /*background-color: #333;*/
-}
+    background-color: #333;
+}*/
 
 /*#title2-h2{
     color: red;
@@ -240,9 +240,9 @@ body{
     background-color: purple;
     width: 200px;
     height: 200px;
-    /*margin:  100px 50px 25px;*/
-    margin-left: auto; /** Al darle el margen left y right calcula los 2 lados (centra la caja, no el texto)*/
-    margin-right: auto;
+    /*margin:  100px 50px 25px;*/ 
+    /*margin-left: auto; */ /** Al darle el margen left y right calcula los 2 lados (centra la caja, no el texto)*/
+    /*margin-right: auto;*/
 }
 
 /**Con bloques margin-right: auto; el elemento va a la izquierda e inverso a margin-left: auto;
@@ -304,4 +304,20 @@ body{
 }
 .btn__link--secondary:active{
     background-color: rgba(48,91,223, 0.15);
+}
+/*! ***********************MALAS PRACTICAS******************************/
+
+/*! No utilizar margin 0 y padding 0 en caso de que se tenga un diseño y se requiera hacer todo*/
+
+.block{
+    margin-top:100px;
+    /*margin: 0 auto;*/ /*!No utilizar esto para centrar*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    background-color: red; /**Por defecto todos los navegadores ponen 8px de margin al body, resetearlas siempre (el normalize lo hace)*/
+    height: 50px; /**No poner padding 0 en el body si no tiene, asegurarse de lo que se escribe tenga sentido, y escribirlo sabiendo por que lo estas escribiendo*/
+    /**: No escribir codigo por que lo hemos visto en nosedonde*/
 }
