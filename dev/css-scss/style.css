@@ -321,3 +321,57 @@ li:not(.no-color){
     height: 50px; /**No poner padding 0 en el body si no tiene, asegurarse de lo que se escribe tenga sentido, y escribirlo sabiendo por que lo estas escribiendo*/
     /**: No escribir codigo por que lo hemos visto en nosedonde*/
 }
+
+/**<<<<<<<<<<PADDING >>>>>>>>>>>>*/
+/*Admite hasta los 4 valores que van en el orden de las agujas del reloj*/
+
+.block{
+    padding: 100px 10px 100px;
+}
+/**<<<<<<<<<<BORDER>>>>>>>>>>>>*/
+
+/*Es un shorthand y agrupa 3 propiedades
+    border-width
+        border-top-width
+        border-right-width
+        border-bottom-width
+        border-left-width
+    border-style
+        border-top-style
+        border-right-style
+        border-bottom-style
+        border-left-style
+            Listado de valores de style:
+                none
+                hidden
+                dotted
+                dashed
+                doubled *divide espacios (divide el borde entre 2)*
+                solid
+                groove *hace sombra 3D*
+                ridge *hace alreves lo que hace groove*
+                inset (tenemos 2 bordes al diagonal de la caja)
+                outset (invertir los 2 bordes de inset)
+    border-color
+        border-top-color
+        border-right-color
+        border-bottom-color
+        border-left-color
+*/
+.block{
+    border: 20px solid slateblue;
+    border-top-width: 10px;
+    border-bottom-style:dotted;
+    border-left-color: red;
+}
+/**<<<<<<<<<<BOX SIZING>>>>>>>>>>>>*/
+
+/*Es la propiedad que nos permite controlar el calculo que hace el navegador a la hora de modificar las propiedades content, padding y border*/
+    /*Los 2 valores que podemos darle son
+        content-box -> Valor por defecto
+        border-box -> Calculo de tamaño del elemento
+        incluyento el padding y el border
+*/
+.block{
+    padding: 20px;
+}
