@@ -209,53 +209,53 @@ a:link{
 
 li:not(.no-color){
     color: blue;
-}*/
+}
 
-/**<<<<<<ESTILOS COMPUTADOS>>>>>>*/
+/**<<<<<<ESTILOS COMPUTADOS>>>>>>
 
 /*body{
     color: rgba(255, 255, 255, 0.679);
     background-color: #333;
-}*/
+}
 
 /*#title2-h2{
     color: red;
 }
 #title2-h2{
     color: lightskyblue;
-}*/
+}
 /*user agent stylesheet | son estilos del navegador q trae por defecto
 
 ~~ Cuando se tenga un problema revisar el DevTools de Google, estilos y computados
-*/
 
-/**<<<<<<BOX MODEL Y MARGIN >>>>>>*/
+
+/**<<<<<<BOX MODEL Y MARGIN >>>>>>
 .title{
     width: 200px;
     margin-right: auto;
-    margin-left: auto; /*! No se coloca a la derecha porque ocupa el ancho completo*/
+    margin-left: auto; /*! No se coloca a la derecha porque ocupa el ancho completo
     background-color: blue;
 }
 .block{
     background-color: purple;
     width: 200px;
     height: 200px;
-    /*margin:  100px 50px 25px;*/ 
-    /*margin-left: auto; */ /** Al darle el margen left y right calcula los 2 lados (centra la caja, no el texto)*/
-    /*margin-right: auto;*/
+    /*margin:  100px 50px 25px; 
+    /*margin-left: auto;  /** Al darle el margen left y right calcula los 2 lados (centra la caja, no el texto)
+    /*margin-right: auto;
 }
 
 /**Con bloques margin-right: auto; el elemento va a la izquierda e inverso a margin-left: auto;
- Para que esto funcione debe tener un ancho declarado y ser un elemento bloque*/
+ Para que esto funcione debe tener un ancho declarado y ser un elemento bloque
 
 
-.inline{ /*Los elementos inline el tamaño no determina su contenido*/
+.inline{ /*Los elementos inline el tamaño no determina su contenido
     background-color: lightcoral;
     color: inherit;
-    /*width: 200px; /*! no agarra*/
-    /*height: 200px; /*! no agarra*/
-    /*margin-top: 100px; /* !No agarra margen vertical*/
-    /*margin-left: 200px; /*Agarra margen horizontal*/
+    /*width: 200px; /*! no agarra
+    /*height: 200px; /*! no agarra
+    /*margin-top: 100px; /* !No agarra margen vertical
+    /*margin-left: 200px; /*Agarra margen horizontal
 }
 
 /*
@@ -271,9 +271,9 @@ li:not(.no-color){
     3 valores -> margin: top left/right bottom;
     2 valores -> margin: top/bottom/ left/right;
     1 valor -> margin: top/right/bottom/left
-*/
 
-/**<<<<<<<<<<METODOLOGIA BEM Y ORDEN DE ESTILOS EN CSS>>>>>>>>>>>>*/
+
+/**<<<<<<<<<<METODOLOGIA BEM Y ORDEN DE ESTILOS EN CSS>>>>>>>>>>>>
 .btn{
     width: 500px;
     margin: 30px auto 0;
@@ -305,30 +305,30 @@ li:not(.no-color){
 .btn__link--secondary:active{
     background-color: rgba(48,91,223, 0.15);
 }
-/*! ***********************MALAS PRACTICAS******************************/
+/*! ***********************MALAS PRACTICAS*****************************
 
-/*! No utilizar margin 0 y padding 0 en caso de que se tenga un diseño y se requiera hacer todo*/
+/*! No utilizar margin 0 y padding 0 en caso de que se tenga un diseño y se requiera hacer todo
 
 .block{
     margin-top:100px;
-    /*margin: 0 auto;*/ /*!No utilizar esto para centrar*/
+    /*margin: 0 auto; /*!No utilizar esto para centrar
     margin-left: auto;
     margin-right: auto;
 }
 
 .header{
-    background-color: red; /**Por defecto todos los navegadores ponen 8px de margin al body, resetearlas siempre (el normalize lo hace)*/
-    height: 50px; /**No poner padding 0 en el body si no tiene, asegurarse de lo que se escribe tenga sentido, y escribirlo sabiendo por que lo estas escribiendo*/
-    /**: No escribir codigo por que lo hemos visto en nosedonde*/
+    background-color: red; /**Por defecto todos los navegadores ponen 8px de margin al body, resetearlas siempre (el normalize lo hace)
+    height: 50px; /**No poner padding 0 en el body si no tiene, asegurarse de lo que se escribe tenga sentido, y escribirlo sabiendo por que lo estas escribiendo
+    /**: No escribir codigo por que lo hemos visto en nosedonde
 }
 
-/**<<<<<<<<<<PADDING >>>>>>>>>>>>*/
-/*Admite hasta los 4 valores que van en el orden de las agujas del reloj*/
+/**<<<<<<<<<<PADDING >>>>>>>>>>>>
+/*Admite hasta los 4 valores que van en el orden de las agujas del reloj
 
 .block{
     padding: 100px 10px 100px;
 }
-/**<<<<<<<<<<BORDER>>>>>>>>>>>>*/
+/**<<<<<<<<<<BORDER>>>>>>>>>>>>
 
 /*Es un shorthand y agrupa 3 propiedades
     border-width
@@ -357,21 +357,63 @@ li:not(.no-color){
         border-right-color
         border-bottom-color
         border-left-color
-*/
+
 .block{
     border: 20px solid slateblue;
     border-top-width: 10px;
     border-bottom-style:dotted;
     border-left-color: red;
 }
-/**<<<<<<<<<<BOX SIZING>>>>>>>>>>>>*/
+/**<<<<<<<<<<BOX SIZING>>>>>>>>>>>>
 
-/*Es la propiedad que nos permite controlar el calculo que hace el navegador a la hora de modificar las propiedades content, padding y border*/
+/*Es la propiedad que nos permite controlar el calculo que hace el navegador a la hora de modificar las propiedades content, padding y border
     /*Los 2 valores que podemos darle son
         content-box -> Valor por defecto
         border-box -> Calculo de tamaño del elemento
         incluyento el padding y el border
-*/
+
 .block{
     padding: 20px;
+}*/
+
+/**<<<<<<<<<<BORDER RADIUS CIRCULAR>>>>>>>>>>>>
+
+Permite redondear vertices de forma independiente. Es un shorthand.
+
+border-top-left-radius 
+border-top-right-radius
+border-top-bottom-right-radius
+border-top-bottom-left-radius*/
+
+.block{
+    width: 200px;
+    height: 200px;
+    background-color: #ff0800;
+    margin: 0 auto 0;
+    /*border-radius: 50px;*/
+    /*ORDEN*/
+    /*border-top-left-radius: 25px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 75px;
+    
+    border-radius: esq. sup. izq. + esq. inf. der. | esq. sup. der. + esq. inf. izq. *2*
+    border-radius:  esq. sup. izq. | esq. sup. der. (esq. inf. izq. toma el valor q tiene al frente )|  esq. inf. der. *3*
+    border-radius:  esq. sup. izq. | esq. sup. der. |  esq. inf. der. | esq. inf. izq. *4*
+    */
+}
+
+/**<<<<<<<<<<BORDER RADIUS ELIPSES>>>>>>>>>>>*/
+
+.block{
+    border-top-left-radius: 50px 100px; /*ELIPSE EN UN SOLO LADO*/
+    border-radius: 50px / 100px; /*50px en el eje X y 50 en el eje Y*/
+}
+.palo{
+    width: 20px;
+    height: 30px;
+    margin: 300px auto 0;
+    background-color: #000;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 30px;
 }
