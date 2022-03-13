@@ -428,7 +428,7 @@ border-top-bottom-left-radius
     scroll -> Apareceran barras de scroll en el eje asignado (x, y o ambos)
     auto -> Apareceran barras de scroll en el caso de que hicieran falta 
 */
-.block{
+/*.block{
     width: 300px;
     height: 300px;
     border-radius: 50px;
@@ -438,10 +438,57 @@ border-top-bottom-left-radius
     overflow: hidden;
 }
 .text{
-    /*width: 350px;*/
+    /*width: 350px;
     margin: 0;
 }
 .box-1, .box-2{
     padding: 30px 20px 10px;
     background-color: blue;
+}*/
+
+/**<<<<<<<<<<COLAPSADO DE MARGENES>>>>>>>>>>>*/
+/*
+LOS MARGENES VERTICALES COLAPSAN
+Si la caja anterior tiene bottom de 20px y la siguiente tiene top de 30px, 20px se solapan y solamente se estiran 10px
+Es decir...
+LOS MARGENES SE SOLAPAN
+
+SE SOLUCIONA DANDOLE MARGIN BOTTOM A TODOS LOS ELEMENTOS
+*/
+body{
+    background-color:midnightblue;
+    
 }
+.header{
+    background-color: lightcoral;
+    height: 100px;
+    margin-bottom: 20px;
+    /**3 FORMAS DE SOLUCIONAR EL COLAPSADO DE IMAGENES ENTRE PADRES E HIJOS*/
+    /*overflow: hidden;*/
+    /*padding-top: 0.1px;*/
+    border-top: 0.1px solid lightcoral;
+}
+.box-1,
+.box-2{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightcyan;
+    width: 300px;
+    height: 300px;
+}
+/**No juntar margin bottom y margin tops porque daran muchos dolores de cabeza [Solo pasa en margenes verticales]*/
+/*! Esto no lo hariamos 
+.box-2{ 
+    margin-top: 20px;
+} */
+.box-1{
+    margin-bottom: 30px;
+}
+.title{
+    margin: 0; /*Se soluciona porque el h1 tiene margenes y los reseteamos*/
+    margin-top: 30px;
+}
+h1{
+    color:aliceblue;
+}
+/**/
