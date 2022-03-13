@@ -374,7 +374,7 @@ li:not(.no-color){
 
 .block{
     padding: 20px;
-}*/
+}
 
 /**<<<<<<<<<<BORDER RADIUS CIRCULAR>>>>>>>>>>>>
 
@@ -383,15 +383,15 @@ Permite redondear vertices de forma independiente. Es un shorthand.
 border-top-left-radius 
 border-top-right-radius
 border-top-bottom-right-radius
-border-top-bottom-left-radius*/
+border-top-bottom-left-radius
 
 .block{
     width: 200px;
     height: 200px;
     background-color: #ff0800;
     margin: 0 auto 0;
-    /*border-radius: 50px;*/
-    /*ORDEN*/
+    /*border-radius: 50px;
+    /*ORDEN
     /*border-top-left-radius: 25px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 25px;
@@ -400,14 +400,14 @@ border-top-bottom-left-radius*/
     border-radius: esq. sup. izq. + esq. inf. der. | esq. sup. der. + esq. inf. izq. *2*
     border-radius:  esq. sup. izq. | esq. sup. der. (esq. inf. izq. toma el valor q tiene al frente )|  esq. inf. der. *3*
     border-radius:  esq. sup. izq. | esq. sup. der. |  esq. inf. der. | esq. inf. izq. *4*
-    */
+    
 }
 
-/**<<<<<<<<<<BORDER RADIUS ELIPSES>>>>>>>>>>>*/
+/**<<<<<<<<<<BORDER RADIUS ELIPSES>>>>>>>>>>>
 
 .block{
-    border-top-left-radius: 50px 100px; /*ELIPSE EN UN SOLO LADO*/
-    border-radius: 50px / 100px; /*50px en el eje X y 50 en el eje Y*/
+    border-top-left-radius: 50px 100px; /*ELIPSE EN UN SOLO LADO
+    border-radius: 50px / 100px; /*50px en el eje X y 50 en el eje Y
 }
 .palo{
     width: 20px;
@@ -416,4 +416,32 @@ border-top-bottom-left-radius*/
     background-color: #000;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 30px;
+}
+
+/**<<<<<<<<<<OVERFLOW>>>>>>>>>>>*/
+
+/*Es la propiedad de que controla que debe hacer la caja cuando su contenido se desborda del contenedor
+    Es un shorthand que engloba overflow-x y overflow-y
+    Tiene 4 posibles valores:
+    visible -> Es el valor por defecto.
+    hidden -> El contenido que se desborde no se verá. Si aplicamos esta propiedad en un solo eje, el otro se pondrá automáticamente en el valor scroll
+    scroll -> Apareceran barras de scroll en el eje asignado (x, y o ambos)
+    auto -> Apareceran barras de scroll en el caso de que hicieran falta 
+*/
+.block{
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+    margin: 0 auto 0;
+    background-color: #ff0800;
+
+    overflow: hidden;
+}
+.text{
+    /*width: 350px;*/
+    margin: 0;
+}
+.box-1, .box-2{
+    padding: 30px 20px 10px;
+    background-color: blue;
 }
