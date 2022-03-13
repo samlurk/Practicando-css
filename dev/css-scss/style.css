@@ -418,7 +418,7 @@ border-top-bottom-left-radius
     border-bottom-left-radius: 30px;
 }
 
-/**<<<<<<<<<<OVERFLOW>>>>>>>>>>>*/
+/**<<<<<<<<<<OVERFLOW>>>>>>>>>>>
 
 /*Es la propiedad de que controla que debe hacer la caja cuando su contenido se desborda del contenedor
     Es un shorthand que engloba overflow-x y overflow-y
@@ -427,7 +427,7 @@ border-top-bottom-left-radius
     hidden -> El contenido que se desborde no se verá. Si aplicamos esta propiedad en un solo eje, el otro se pondrá automáticamente en el valor scroll
     scroll -> Apareceran barras de scroll en el eje asignado (x, y o ambos)
     auto -> Apareceran barras de scroll en el caso de que hicieran falta 
-*/
+
 /*.block{
     width: 300px;
     height: 300px;
@@ -444,9 +444,9 @@ border-top-bottom-left-radius
 .box-1, .box-2{
     padding: 30px 20px 10px;
     background-color: blue;
-}*/
+}
 
-/**<<<<<<<<<<COLAPSADO DE MARGENES>>>>>>>>>>>*/
+/**<<<<<<<<<<COLAPSADO DE MARGENES>>>>>>>>>>>
 /*
 LOS MARGENES VERTICALES COLAPSAN
 Si la caja anterior tiene bottom de 20px y la siguiente tiene top de 30px, 20px se solapan y solamente se estiran 10px
@@ -454,7 +454,7 @@ Es decir...
 LOS MARGENES SE SOLAPAN
 
 SE SOLUCIONA DANDOLE MARGIN BOTTOM A TODOS LOS ELEMENTOS
-*/
+
 body{
     background-color:midnightblue;
     
@@ -463,9 +463,9 @@ body{
     background-color: lightcoral;
     height: 100px;
     margin-bottom: 20px;
-    /**3 FORMAS DE SOLUCIONAR EL COLAPSADO DE IMAGENES ENTRE PADRES E HIJOS*/
-    /*overflow: hidden;*/
-    /*padding-top: 0.1px;*/
+    /**3 FORMAS DE SOLUCIONAR EL COLAPSADO DE IMAGENES ENTRE PADRES E HIJOS
+    /*overflow: hidden;
+    /*padding-top: 0.1px;
     border-top: 0.1px solid lightcoral;
 }
 .box-1,
@@ -476,19 +476,39 @@ body{
     width: 300px;
     height: 300px;
 }
-/**No juntar margin bottom y margin tops porque daran muchos dolores de cabeza [Solo pasa en margenes verticales]*/
+/**No juntar margin bottom y margin tops porque daran muchos dolores de cabeza [Solo pasa en margenes verticales]
 /*! Esto no lo hariamos 
 .box-2{ 
     margin-top: 20px;
-} */
+} 
 .box-1{
     margin-bottom: 30px;
 }
 .title{
-    margin: 0; /*Se soluciona porque el h1 tiene margenes y los reseteamos*/
+    margin: 0; /*Se soluciona porque el h1 tiene margenes y los reseteamos
     margin-top: 30px;
 }
 h1{
     color:aliceblue;
 }
-/**/
+/**<<<<<<<<<<DISPLAY>>>>>>>>>>>
+Sirve para cambiar el contexto de los elementos dentro del navegador
+
+Admite varios valores
+    none -> Hace que el elemento no se muestre, pero sigue cargandose 
+    block -> Hace que el elemento sea de bloque
+    inline -> Hace que el elemento sea de linea
+    inline-block -> Hace que el elemento sea de linea pero admite medidas y margenes verticales
+    */
+body{
+    background-color: rgba(0,0,0,.9);
+}
+.text{
+    background-color: lightcoral;
+}
+.link{
+    display:inline-block; /*El elemento crece pero sigue siendo de linea*/
+    margin-top: 20px;
+    background-color: #fff;
+}
+
