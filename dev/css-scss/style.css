@@ -510,7 +510,7 @@ body{
     display:inline-block; /*El elemento crece pero sigue siendo de linea
     margin-top: 20px;
     background-color: #fff;
-}*/
+}
 
 /**<<<<<<<<<<OUTLINE>>>>>>>>>>>
 Es la propiedad que nos permite dibujar un borde por fuera del modelo de la caja.
@@ -526,7 +526,7 @@ pero con algunas diferencias.
     No se pueden controlar los lados de forma independiente
 
     Tambien cuenta con la propiedad outline-offset, que permite
-    aumentar o disminuir la distancia del outline respecto a la caja que pertenece.*/
+    aumentar o disminuir la distancia del outline respecto a la caja que pertenece.
 body{
     background-color: rgba(0,0,0,.9);
     color: white;
@@ -544,12 +544,63 @@ body{
 }
 .outline{
     outline: 3px solid lightcoral;
-    /*border: 50px solid lightgreen;*/
-    outline-offset: -13px; /**Podemos ponerlo dentro de la caja, cosa que con border no podemos hacer*/
+    /*border: 50px solid lightgreen;
+    outline-offset: -13px; /**Podemos ponerlo dentro de la caja, cosa que con border no podemos hacer
     border: 3px solid lightgreen;
 }
 /*El borde tiene el problema que va estar modificando la caja, aumenta el tamanio de la caja y empuja los elementos
 Aunque tengamos el box-sizing: border box
 la caja no tiene medidas
 Por lo tanto mide 50px de borde mas lo que tiene de contenido
+
+
+/**<<<<<<<<<<TEXT ALIGN>>>>>>>>>>>
+    Text-align es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de bloque siempre que
+    el contenido NO TENGA ANCHO DECLARADO
+    text-align: left; -> Alinea Contenido a la der.
+    text align: right; -> Alinea el contenido a la derecha
+    text-align: center; -> Alinea el contenido al centro
+    text-align: justify; -> Alinea el contenido de forma justificada. No es recomendable usarlo.
 */
+body{
+    background-color: #333;
+    color: white;
+}
+.box{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 0;
+    margin: 20px auto;
+    border: 2px solid lightcoral;
+    text-align: center; /**Si se puede porque el contenido no tiene ancho declarado*/
+}
+.text{
+    text-align: left; /*El contenido suele estar alineado a la izquierda*/
+    text-align: right;
+    text-align: center;
+    text-align: justify; /*No recomendable usar, quedan espacios feos entre palabras*/
+}
+.link{
+    display: block; /*! No centra con inline e inline-block*/
+    width: 200px; /**No centrara  con text align porque tiene un ancho declarado*/
+    margin: 0 auto 20px;
+    background-color: #666;
+    color: white;
+    text-align: center; /*! No se puede*/
+    /*Text-align centra a los contenidos de los elementos de bloque*/
+}
+/*.img{
+    display: block; /**EL contenido es la propia imagen y la imagen esta ocupado todo el tamaño de la caja 
+    margin: 0 auto 0;
+    /*text-align: center;*/ /*! No pasa nada
+    /**Las imagenes por defecto son display inline block
+}*/
+
+/*Centrar la imagen desde un contenedor*/
+.img-container{ /**La imagen centra, siempre y cuando no tenga un display block*/
+    text-align: center;
+}
+/*.img{
+    display: block; /*! No centra con img-container porque la imagen esta ocupando todo lo que puede*
+}*/
+/**TENER EN CUENTA SI LO QUE CENTRAMOS ES EL CONTENIDO DE UNA CAJA O LA CAJA EN SI*/
