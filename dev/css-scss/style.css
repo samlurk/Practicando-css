@@ -276,7 +276,7 @@ li:not(.no-color){
 /**<<<<<<<<<<METODOLOGIA BEM Y ORDEN DE ESTILOS EN CSS>>>>>>>>>>>>
 .btn{
     width: 500px;
-    margin: 30px auto 0;
+    margin: 30px auto 0px;
 }
 
 .btn__link{
@@ -311,7 +311,7 @@ li:not(.no-color){
 
 .block{
     margin-top:100px;
-    /*margin: 0 auto; /*!No utilizar esto para centrar
+    /*margin: 0pxauto; /*!No utilizar esto para centrar
     margin-left: auto;
     margin-right: auto;
 }
@@ -389,7 +389,7 @@ border-top-bottom-left-radius
     width: 200px;
     height: 200px;
     background-color: #ff0800;
-    margin: 0 auto 0;
+    margin: 0px auto 0px;
     /*border-radius: 50px;
     /*ORDEN
     /*border-top-left-radius: 25px;
@@ -412,7 +412,7 @@ border-top-bottom-left-radius
 .palo{
     width: 20px;
     height: 30px;
-    margin: 300px auto 0;
+    margin: 300px auto 0px;
     background-color: #000;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 30px;
@@ -432,14 +432,14 @@ border-top-bottom-left-radius
     width: 300px;
     height: 300px;
     border-radius: 50px;
-    margin: 0 auto 0;
+    margin: 0px auto 0px;
     background-color: #ff0800;
 
     overflow: hidden;
 }
 .text{
     /*width: 350px;
-    margin: 0;
+    margin: 0px;
 }
 .box-1, .box-2{
     padding: 30px 20px 10px;
@@ -485,7 +485,7 @@ body{
     margin-bottom: 30px;
 }
 .title{
-    margin: 0; /*Se soluciona porque el h1 tiene margenes y los reseteamos
+    margin: 0px; /*Se soluciona porque el h1 tiene margenes y los reseteamos
     margin-top: 30px;
 }
 h1{
@@ -561,7 +561,7 @@ Por lo tanto mide 50px de borde mas lo que tiene de contenido
     text align: right; -> Alinea el contenido a la derecha
     text-align: center; -> Alinea el contenido al centro
     text-align: justify; -> Alinea el contenido de forma justificada. No es recomendable usarlo.
-*/
+
 body{
     background-color: #333;
     color: white;
@@ -569,38 +569,61 @@ body{
 .box{
     background-color: #666;
     width: 100px;
-    padding: 10px 0;
+    padding: 10px 0px;
     margin: 20px auto;
     border: 2px solid lightcoral;
-    text-align: center; /**Si se puede porque el contenido no tiene ancho declarado*/
+    text-align: center; /**Si se puede porque el contenido no tiene ancho declarado
 }
 .text{
-    text-align: left; /*El contenido suele estar alineado a la izquierda*/
+    text-align: left; /*El contenido suele estar alineado a la izquierda
     text-align: right;
     text-align: center;
-    text-align: justify; /*No recomendable usar, quedan espacios feos entre palabras*/
+    text-align: justify; /*No recomendable usar, quedan espacios feos entre palabras
 }
 .link{
-    display: block; /*! No centra con inline e inline-block*/
-    width: 200px; /**No centrara  con text align porque tiene un ancho declarado*/
-    margin: 0 auto 20px;
+    display: block; /*! No centra con inline e inline-block
+    width: 200px; /**No centrara  con text align porque el contenido tiene un ancho declarado
+    margin: 0px auto 20px;
     background-color: #666;
     color: white;
-    text-align: center; /*! No se puede*/
-    /*Text-align centra a los contenidos de los elementos de bloque*/
+    text-align: center; /*! No se puede
+    /*Text-align centra a los contenidos de los elementos de bloque
 }
 /*.img{
     display: block; /**EL contenido es la propia imagen y la imagen esta ocupado todo el tamaño de la caja 
-    margin: 0 auto 0;
-    /*text-align: center;*/ /*! No pasa nada
+    margin: 0px auto 0px;
+    /*text-align: center; /*! No pasa nada
     /**Las imagenes por defecto son display inline block
-}*/
+}
 
-/*Centrar la imagen desde un contenedor*/
-.img-container{ /**La imagen centra, siempre y cuando no tenga un display block*/
+/*Centrar la imagen desde un contenedor
+.img-container{ /**La imagen centra, siempre y cuando no tenga un display block
     text-align: center;
 }
 /*.img{
     display: block; /*! No centra con img-container porque la imagen esta ocupando todo lo que puede*
-}*/
+}
 /**TENER EN CUENTA SI LO QUE CENTRAMOS ES EL CONTENIDO DE UNA CAJA O LA CAJA EN SI*/
+
+
+/**<<<<<<<<<<BOX SHADOW>>>>>>>>>>>
+    La sintaxis de box-shadow se puede escribir de distintas formas segun lo que queramos conseguir.
+    Los valores que le podemos poner son:
+    offset-x -> Desplazamiento en x (obligatorio)
+    offset-y -> Desplazamiento en y (obligatorio)
+    blur-radius -> Desenfoque de la sombra
+    spread-radius -> Expansion de la sombra
+    color -> El color de la sombra, si no lo especificamos heredará del elemento al que pertenece
+    inset -> Determina si la sombra será interior o exterior
+*/
+.box{
+    background-color: darkcyan;
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    margin: 50px auto 0px;
+    border-radius: 30px;
+    /*box-shadow: inset -5px -5px 10px 0px #111;*/
+    /**El box shadow toma como herencia el color de la caja, si la letra esta en negra pues estara igual la sombra*/
+    box-shadow: inset 5px 5px red, 5px 5px blue; /**Se pueden crear multiples sombras. Box shadow funciona como outline porque no mueve las cajas*/
+}
