@@ -768,7 +768,7 @@ body{
 }
 
     **<<<<<<<<<<POSITION STICKY>>>>>>>>>>>
-*/
+
 body{
     background-color: #333;
     color: #ffffff;
@@ -777,21 +777,21 @@ img{
     display: block;
 }
 .header{
-    /*position: sticky;*/ /**Aqui lo recorremos desde el body*/
+    /*position: sticky; /**Aqui lo recorremos desde el body
     text-align: center;
     background-color: lightskyblue;
-    /*top: 0;*/
+    /*top: 0;
     height: 500px;
-    overflow: hidden; /*! No funciona, cualquier otro valor de overflow*/
-    /*! Sticky tampoco funciona si el alto del scroll no es*/
+    overflow: hidden; /*! No funciona, cualquier otro valor de overflow
+    /*! Sticky tampoco funciona si el alto del scroll no es suficiente
 }
-.menu{ /**Aqui estamos recorriendo el alto del elemento que contiene (menu recorre el alto de header)*/
+.menu{ /**Aqui estamos recorriendo el alto del elemento que contiene (menu recorre el alto de header)
     position: sticky;
     top: 0;
 }
-/**FIXED SE COLOCA REFERENTE AL HTML O BODY, PERO STICKY TOMA COMO REFERENCIA TOMA EL ALTO DEL PADRE EN BASE A SU CONTENIDO*/
+/**FIXED SE COLOCA REFERENTE AL HTML O BODY, PERO STICKY TOMA COMO REFERENCIA TOMA EL ALTO DEL PADRE EN BASE A SU CONTENIDO
 
-/**Otro ejemplo de Sticky*/
+/**Otro ejemplo de Sticky
 .article-title{
     position: sticky;
     top: 0px;
@@ -801,3 +801,47 @@ img{
 article{
     outline: 2px solid red;
 }
+
+*<<<<<<<<<<Z-INDEX>>>>>>>>>>>
+*/
+body{
+    background-color: #333;
+    color: #fff;
+}
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: #555;
+    position: relative;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+}
+.box-1{
+    background-color: lightcoral;
+    position: relative;
+    left: 150px;
+    z-index: -1;
+}
+.box-1-2{
+    background-color:lightskyblue;
+    position: relative;
+    z-index: -2;
+    left: 200px;
+    bottom: 100px;
+}
+.box-2{
+    background-color: lightgreen;
+    position: relative;
+    top: 50px;
+    z-index: 1; /**Modificamos su contexto de apilamiento*/
+}
+.box-3{/**Al tener los elementos posicionados el valor que vale es el de HTML*/
+    background-color: lightseagreen;
+    position: relative;
+}
+/**No utilizar numeros consecutivos con z-index, utilizar de 10 en 10 o de 100 en 100*/
