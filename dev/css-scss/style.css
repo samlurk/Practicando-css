@@ -747,9 +747,6 @@ body{
 }
 
     **<<<<<<<<<<POSITION FIXED>>>>>>>>>>>
-
-
-
 body{
     background-color: #333;
     color: #fff;
@@ -769,4 +766,38 @@ body{
     background-color: lightcoral;
     width: 200px;
 }
+
+    **<<<<<<<<<<POSITION STICKY>>>>>>>>>>>
 */
+body{
+    background-color: #333;
+    color: #ffffff;
+}
+img{
+    display: block;
+}
+.header{
+    /*position: sticky;*/ /**Aqui lo recorremos desde el body*/
+    text-align: center;
+    background-color: lightskyblue;
+    /*top: 0;*/
+    height: 500px;
+    overflow: hidden; /*! No funciona, cualquier otro valor de overflow*/
+    /*! Sticky tampoco funciona si el alto del scroll no es*/
+}
+.menu{ /**Aqui estamos recorriendo el alto del elemento que contiene (menu recorre el alto de header)*/
+    position: sticky;
+    top: 0;
+}
+/**FIXED SE COLOCA REFERENTE AL HTML O BODY, PERO STICKY TOMA COMO REFERENCIA TOMA EL ALTO DEL PADRE EN BASE A SU CONTENIDO*/
+
+/**Otro ejemplo de Sticky*/
+.article-title{
+    position: sticky;
+    top: 0px;
+    background-color: #333;
+    outline: 2px solid red;
+}
+article{
+    outline: 2px solid red;
+}

@@ -1,0 +1,2 @@
+body{background-color:#333;color:#ffffff}img{display:block}.header{text-align:center;background-color:lightskyblue;height:500px;overflow:hidden /*! No funciona, cualquier otro valor de overflow*/
+    /*! Sticky tampoco funciona si el alto del scroll no es*/}.menu{position:-webkit-sticky;position:sticky;top:0}.article-title{position:-webkit-sticky;position:sticky;top:0px;background-color:#333;outline:2px solid red}article{outline:2px solid red}
