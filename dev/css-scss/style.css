@@ -603,7 +603,7 @@ body{
 /*.img{
     display: block; /*! No centra con img-container porque la imagen esta ocupando todo lo que puede*
 }
-/**TENER EN CUENTA SI LO QUE CENTRAMOS ES EL CONTENIDO DE UNA CAJA O LA CAJA EN SI*/
+/**TENER EN CUENTA SI LO QUE CENTRAMOS ES EL CONTENIDO DE UNA CAJA O LA CAJA EN SI
 
 
 /**<<<<<<<<<<BOX SHADOW>>>>>>>>>>>
@@ -615,7 +615,7 @@ body{
     spread-radius -> Expansion de la sombra
     color -> El color de la sombra, si no lo especificamos heredará del elemento al que pertenece
     inset -> Determina si la sombra será interior o exterior
-*/
+
 .box{
     background-color: darkcyan;
     width: 200px;
@@ -623,9 +623,9 @@ body{
     text-align: center;
     margin: 50px auto 0px;
     border-radius: 30px;
-    /*box-shadow: inset -5px -5px 10px 0px #111;*/
-    /**El box shadow toma como herencia el color de la caja, si la letra esta en negra pues estara igual la sombra*/
-    box-shadow: inset -5px -5px 10px red, 5px 5px 10px blue; /**Se pueden crear multiples sombras. Box shadow funciona como outline porque no mueve las cajas*/
+    /*box-shadow: inset -5px -5px 10px 0px #111;
+    /**El box shadow toma como herencia el color de la caja, si la letra esta en negra pues estara igual la sombra
+    box-shadow: inset -5px -5px 10px red, 5px 5px 10px blue; /**Se pueden crear multiples sombras. Box shadow funciona como outline porque no mueve las cajas
 }
 /**<<<<<<<<<<POSITION>>>>>>>>>>>
     Position nos permite posicionar los elementos. Conceptos en tener en cuenta antes de entender position
@@ -677,4 +677,31 @@ body{
     se comportará como si tuviera relative.
 
 
+    **<<<<<<<<<<POSITION RELATIVE>>>>>>>>>>>
+
+
+body{
+    background-color: #333;
+}
+.box {
+    width: 100px;
+    height: 100px;
+}
+.box-1{
+    background-color: lightcoral;
+    position: relative;
+    top: 50px;
+    left: 50px; /**Acepta valores negativos
+    /*right: 25px; /*! No funciona porque ya tiene left
+    /*bottom: 25px; /*! No funciona porque ya tiene top
+    border-radius: 50px; /**El punto de referencia siempre es el mismo
+
+} /**No se mueven al mismo sitio box-1 y box-2 porque se mueve desde la posicion inicial que les corresponde del html
+.box-2{
+    position: relative;
+    right: 50px;    
+    background-color: lightgreen;
+} /**En posicion relative se le puede obligar a los elementos usar un mismo espacio
+
+    **<<<<<<<<<<POSITION ABSOLUTE>>>>>>>>>>>
 */
