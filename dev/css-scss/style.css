@@ -803,7 +803,7 @@ article{
 }
 
 *<<<<<<<<<<Z-INDEX>>>>>>>>>>>
-*/
+
 body{
     background-color: #333;
     color: #fff;
@@ -838,10 +838,57 @@ body{
     background-color: lightgreen;
     position: relative;
     top: 50px;
-    z-index: 1; /**Modificamos su contexto de apilamiento*/
+    z-index: 1; /**Modificamos su contexto de apilamiento
 }
-.box-3{/**Al tener los elementos posicionados el valor que vale es el de HTML*/
+.box-3{/**Al tener los elementos posicionados el valor que vale es el de HTML
     background-color: lightseagreen;
     position: relative;
 }
-/**No utilizar numeros consecutivos con z-index, utilizar de 10 en 10 o de 100 en 100*/
+/**No utilizar numeros consecutivos con z-index, utilizar de 10 en 10 o de 100 en 100
+
+*<<<<<<<<<<STACKING CONTEXT>>>>>>>>>>>
+    El Stacking context o el contexto de apilamiento es el espacio donde nuestros elementos
+    se van a ir apilando para que unos queden por detras y otros por delante
+
+    El orden Stacking Context es: (de delante a atrás):
+        ELementos posicionados con un z-index de 1 o mas
+        Elementos posicionados sin z-index declarado (o z-index: auto)
+        Elementos no posicionados
+        Elementos con z-index negativo
+*/
+.box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+}
+.box-1{
+    background-color: lightcoral;
+    position: relative;
+    z-index: 1; /**Se puede poner z index- cuando haya un elemento posicionado que se requiera poner sobre el*/
+}
+.box-2{ /*! Se puso delante del container, pero no de sus hijos text y title, es un elemento no posicionado dentro  de otro no posicionado*/
+    background-color: lightgreen;
+    margin-top: -50px;
+    position: relative; /**Se da una posicion para arreglarlo*/
+}
+.box-3{
+    background-color: lightseagreen;
+}
+.container{
+    background-color: mediumslateblue;
+    margin-top: -50px;
+    position: relative;
+    /*opacity: 0.75; /*!El container con opacity es un nuevo contexto menor que los elementos posicionados*/
+}
+.title{
+    margin: 0;
+    background-color: #ccc;
+    position: relative; /**Se puso delante de text al posicionarse*/
+    z-index: 10;
+    opacity: 0.75; /**El opacity se resuelve dandoselo a los hijos del container*/
+}
+.text{
+    margin: 0;
+    margin-top: -40px;
+}
