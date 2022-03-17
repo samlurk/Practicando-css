@@ -855,7 +855,7 @@ body{
         Elementos posicionados sin z-index declarado (o z-index: auto)
         Elementos no posicionados
         Elementos con z-index negativo
-*/
+
 .box{
     width: 100px;
     height: 100px;
@@ -865,12 +865,12 @@ body{
 .box-1{
     background-color: lightcoral;
     position: relative;
-    z-index: 1; /**Se puede poner z index- cuando haya un elemento posicionado que se requiera poner sobre el*/
+    z-index: 1; /**Se puede poner z index- cuando haya un elemento posicionado que se requiera poner sobre el
 }
-.box-2{ /*! Se puso delante del container, pero no de sus hijos text y title, es un elemento no posicionado dentro  de otro no posicionado*/
+.box-2{ /*! Se puso delante del container, pero no de sus hijos text y title, es un elemento no posicionado dentro  de otro no posicionado
     background-color: lightgreen;
     margin-top: -50px;
-    position: relative; /**Se da una posicion para arreglarlo*/
+    position: relative; /**Se da una posicion para arreglarlo
 }
 .box-3{
     background-color: lightseagreen;
@@ -879,16 +879,36 @@ body{
     background-color: mediumslateblue;
     margin-top: -50px;
     position: relative;
-    /*opacity: 0.75; /*!El container con opacity es un nuevo contexto menor que los elementos posicionados*/
+    /*opacity: 0.75; /*!El container con opacity es un nuevo contexto menor que los elementos posicionados
 }
 .title{
     margin: 0;
     background-color: #ccc;
-    position: relative; /**Se puso delante de text al posicionarse*/
+    position: relative; /**Se puso delante de text al posicionarse
     z-index: 10;
-    opacity: 0.75; /**El opacity se resuelve dandoselo a los hijos del container*/
+    opacity: 0.75; /**El opacity se resuelve dandoselo a los hijos del container
 }
 .text{
     margin: 0;
     margin-top: -40px;
 }
+
+*<<<<<<<<<<ORDEN DE PROPIEDADES>>>>>>>>>>>
+1- Propiedades de posicionamiento
+2- Propiedades del box model
+3- Propiedades de texto
+4- Propiedades visuales (colores, bordes, background...)
+5- El resto
+body{
+    position: relative;
+    top: 50px;
+    left: 20px;
+    overflow: hidden;
+    font-size: 30px;
+    background: red;
+    color: blue;
+    border: 30px solid lightskyblue;
+    animaciones, etc etc
+}
+
+*/
