@@ -997,4 +997,74 @@ body{
     width: auto; /**El navegador calcula el ancho, en base al ancho que tiene disponible en el padre
     background-color: lightseagreen;
 }
+
+    *<<<<<<<<<<Height en % y Height Auto>>>>>>>>>>>
+
+
+    % -> Cuando estamos dentro de un contenedor, 
+    este tiene que tener un alto declarado, si no 
+    no podrá calcular el porcentaje. Si se le aplica una medida
+    con porcentale se sustituirá  automaticamente por auto.
+
+    auto -> Cuando utilizamos auto el alto lo calculará el navegador en base al contenido del elemento
+
+    NOTA: Height es una propiedad que se tiene que usar con mucho cuidado. Si no es necesario
+    establecer el alto, dejar que el contenido sea el que decida el alto del elemento.
+
+        ~~~~~~~~~~Problemas de Height con Posicionamiento~~~~~~~~~~~~~
+    
+
+body{
+    background-color: #333;
+    color: lightcoral;
+    /*height: 500px; Es poco comun darle al body un height
+}
+.header{
+    background-color: lightskyblue;
+    text-align: center;
+}
+.box{
+    width: 300px;
+    height: 300px; /*La caja desaparece
+    /*height: 100%; /*! El Height se pone en base al contenido, porque no tiene contenedor, es el body, pero el body no tiene alto declarado
+    /**Lo que esta haciendo el height 100% es calcular la altura de forma automatica, porque el contenedor no tiene alto declarado
+    /*padding-bottom: 1em;
+    /**Si se quiere ganar espacio usar padding en vez de height
+    **dado que usando height y se agg mas cosas el contenido se desborda, si se hace con padding, siempre tendra el mismo espacio 
+    background-color: lightgreen;
+}
+.box-hijo{
+    position: absolute;
+    width: 50%;
+    height: 50%; /**Si no tiene ancho declarado el contenedor se le sustituira por auto y esto genera problemas
+    background-color: lightseagreen;
+}
+/**Cuando usamos auto el calculo lo va hacer el navegador en base al contenido del elemento
+
+Si el hijo no tiene nada y el padre no tiene alto declarado, al poner auto, no se va a mostrar nada, pq no tiene contenido, aunque le hayamos declarado alto al hijo
+
+    **~~~~~~~~~~Problemas de Height con Posicionamiento~~~~~~~~~~~~~*
 */
+
+body{
+    background-color: #333;
+    color: lightcoral;
+}
+.header{
+    background-color: lightskyblue;
+    text-align: center;
+}
+.box{
+    width: 300px;
+    height: 300px; 
+    background-color: lightgreen;
+}
+.box-hijo{
+    top: 0;
+    position: absolute; /*! Se rompe, con fixed pasa lo mismo, y no se guia del padre al darle height. Se calcula en base al viewport*/ 
+    /**Con position Relative y Sticky vuelven a la normalidad*/
+    width: 50%;
+    height: 100%; 
+    background-color: lightseagreen;
+}
+/**El Viewport equivale al todo el espacio visible que tenemos*/
