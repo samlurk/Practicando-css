@@ -947,27 +947,54 @@ Las medidas en CSS se pueden agrupar en 2 grupos, absolutas y relativas
 
     /**Es de 16px por defecto en la raiz del documento porque equivale a los 12px que se usan en imprenta 
     NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de la fuente)
-*/
+
 
 body{
     background-color: #333;
     color: lightcoral;
-    /*font-size: 10px; /**em toma las medidas mediante el contexto en donde te encuentras a diferencia de rem que usa la raiz del documento que son 16px*/
+    /*font-size: 10px; /**em toma las medidas mediante el contexto en donde te encuentras a diferencia de rem que usa la raiz del documento que son 16px
 }
 
 .title{
-    font-size: 2rem; /**a pesar de que cambio el contexto, no cambia la medida porque usa la raiz del documento*/
-    /**Usar siempre rem para tamaños de fuente*/
+    font-size: 2rem; /**a pesar de que cambio el contexto, no cambia la medida porque usa la raiz del documento
+    /**Usar siempre rem para tamaños de fuente
 }
 
-/**Casos en los que se usa em en vez de rem*/
+/**Casos en los que se usa em en vez de rem
 
 .link{
     background-color: lightcoral;
     color: #333;
     /*padding: 1rem 2rem; /*! No sigue siendo coherente el padding y el radius con el rem
-    border-radius: .5rem;*/
-    padding: 1em 2em; /**Em si es coherente con el mismo espacio a pesar de que siga creciendo, porque usa el contexto del tamaño del texto para medir su tamaño*/
+    border-radius: .5rem;
+    padding: 1em 2em; /**Em si es coherente con el mismo espacio a pesar de que siga creciendo, porque usa el contexto del tamaño del texto para medir su tamaño
     border-radius: .5em;
-    font-size: 1rem; /*A medida que vaya creciendo no tiene el mismo padding porque la medida es absoluta (si se usa padding rem)*/
+    font-size: 1rem; /*A medida que vaya creciendo no tiene el mismo padding porque la medida es absoluta (si se usa padding rem)
 }
+
+    *<<<<<<<<<<Width en % y Width Auto>>>>>>>>>>>
+    
+    % -> Cuando usamos porcentage usamos de referencia el tamaño del contenedor y el navegador calcula ese porcentage. Esto no ocurre cuando usamos transform.
+
+    auto -> Cuando usamos auto le pedimos al navegador que calcule en funcion del espacio disponible.
+
+body{
+    background-color: #333;
+    color: lightcoral;
+}
+.box{
+    width: 100%;
+    height: 250px;
+    background-color: lightgreen;
+    margin: 0 50px; /**Si no se deja auto en width, se genera un scroll, si la medida de la caja mas el margen tiene mas ancho que el dispositivo se genera un scroll
+    width: auto;
+}
+.box-hijo{
+    width: 100%; /**Crece proporcionalmente
+    height: 25%;
+    margin-left: 50px; /**Pero se rompe si usamos margin
+    /**Se resuelve si usamos
+    width: auto; /**El navegador calcula el ancho, en base al ancho que tiene disponible en el padre
+    background-color: lightseagreen;
+}
+*/
