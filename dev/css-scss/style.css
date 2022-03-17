@@ -931,4 +931,43 @@ Las medidas en CSS se pueden agrupar en 2 grupos, absolutas y relativas
     ex -> Altura x de la fuente del elemento.
     ch -> La medida del ancho del glifo "0" de la letra del elemento.
     lh -> Altura de la linea del elemento
+
+    *<<<<<<<<<<MEDIDAS EM Y REM>>>>>>>>>>>
+
+    rem -> Corresponde a la medida "m" de la raiz del documento (html)
+    
+    ejemplo: 16px (tamaño raiz) = 1rem 
+
+    em -> Corresponde a la medida "m" del contexto donde nos encontremos
+
+    El estandar del tamaño de fuente por defecto en la raiz del documento es de 16px,
+    y NO ES RECOMENDABLE MODIFICARLO
+
+    /**En imprenta la m es el caracter mas grande
+
+    /**Es de 16px por defecto en la raiz del documento porque equivale a los 12px que se usan en imprenta 
+    NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de la fuente)
 */
+
+body{
+    background-color: #333;
+    color: lightcoral;
+    /*font-size: 10px; /**em toma las medidas mediante el contexto en donde te encuentras a diferencia de rem que usa la raiz del documento que son 16px*/
+}
+
+.title{
+    font-size: 2rem; /**a pesar de que cambio el contexto, no cambia la medida porque usa la raiz del documento*/
+    /**Usar siempre rem para tamaños de fuente*/
+}
+
+/**Casos en los que se usa em en vez de rem*/
+
+.link{
+    background-color: lightcoral;
+    color: #333;
+    /*padding: 1rem 2rem; /*! No sigue siendo coherente el padding y el radius con el rem
+    border-radius: .5rem;*/
+    padding: 1em 2em; /**Em si es coherente con el mismo espacio a pesar de que siga creciendo, porque usa el contexto del tamaño del texto para medir su tamaño*/
+    border-radius: .5em;
+    font-size: 1rem; /*A medida que vaya creciendo no tiene el mismo padding porque la medida es absoluta (si se usa padding rem)*/
+}
