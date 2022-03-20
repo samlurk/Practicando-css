@@ -1185,7 +1185,7 @@ Para ello tenemos propiedades que limitan esas medidas:
     
     IMPORTANTE: Recordar que existe el color transparent
 
-*/
+
 body{
     background-color: #333;
     color: lightcoral;
@@ -1195,11 +1195,35 @@ body{
     height: 300px;
 }
 .box{
-    border-top: 200px solid lightseagreen; /**Se pone top para que sea el que se muestre la punta*/
+    border-top: 200px solid lightseagreen; /**Se pone top para que sea el que se muestre la punta
     border-right: 250px solid transparent; 
     border-left: 250px solid transparent;
-    transform: rotate(0.5turn); /**Rota el eje de el triangulo*/
+    transform: rotate(0.5turn); /**Rota el eje de el triangulo
     /*width: 300px;
     height: 300px;
-    background-color: transparent;*/
+    background-color: transparent;
 }
+
+/**<<<<<<<<<<currentColor>>>>>>>>>>>
+
+currentColor: Es una propiedad clave que se puede usar en lugar de cualquier valor
+de color y usará el valor ya sea establecido o heredado en la propiedad color.
+
+*/
+
+body{
+    background-color: mediumorchid;
+    color: #333;
+}
+.main{
+    color: aquamarine; /**Cuando se agg color a la caja, y se da bgc color, el contexto lo agarra del elemento, no del body*/
+    /*background-color: currentColor; /**Coge la propiedad valor del color heredado del body, si la caja tiene color hereda del mismo al bgc-color, y si no hay ninguno declarado, agarra el negro por defecto*/
+    /*background-color: inherit; /**Esta heredando la propeidad background-color (Es el mismo que tiene declarado del body)*/
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    border: 2px solid currentColor; /**Hereda el color del main, si no se le da color, el borde lo hereda, es indiferente poner currentColor en esos casos*/
+}
+/**Al dia de hoy no se usa tanto currentColor, porque se usan variables en CSS, pero si una variable en CSS no lo soporta un navegador, usar currentColor*/
