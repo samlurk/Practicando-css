@@ -1351,4 +1351,41 @@ body{
     CMYK (Cyan, Magenta, Yellow y Black), HWB (Hue, Whiteness, Blackness),
     lab (lightness, distance a, distance b) y lch(lightness, chroma, hue),
     todos están en el borrador del módulo de color de nivel 4 pero aún no es estándar y no están soportados por los navegadores.
-*/
+
+/**<<<<<<<<<<Tipografía>>>>>>>>>>>
+    La tipografía es la ciencia que estudia el diseño y uso de los tipos de letra
+
+    *Las fuentes son tipos especificos de letra*
+
+    Los glifos son cada uno de los dibujos que representan cada símbolo de la fuentes, incluidos los espacios.
+
+    Los estilos de fuente son las modificaciones que se hacen a las fuentes, como el groson o la inclinación.
+
+    Familia tipográfica, son las diferentes fuentes que pertenecen a una misma fuente base.
+
+    Cuando usamos una propiedad text-* estamos afectando a un bloque completo
+
+    Cuando utilizamos una propiedad font-* afectamos a la fuente del texto
+
+    Fuentes predeterminadas: son las fuentes que se considerán seguras ya que son genéricas y no establecen 
+    una familia tipográfica, si no un estilo de fuente
+    
+    serif: Fuentes que tienen serifas (adornos en los caracteres)
+    
+    sans-serif: Fuentes sin serifas
+
+    monospace: Fuentes que itenen el mismo espaciado entre todos sus caracteres /*Todos los editores de codigo suelen tener monospace*
+
+    cursive: Fuentes que pretender emular escritura a mano, o ligaduras y trazos fluídos
+
+    fantasy: Fuentes que suelen ser decorativas
+
+
+    Las serif solo para titulos
+    */
+
+body{
+    background-color: #333;
+    color: aliceblue;
+    font-family: sans-serif; /**El navegador usa la fuente que esta en el sistema operativo y la utiliza, depende del sistema operativo*/
+}
