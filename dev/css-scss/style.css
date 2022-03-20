@@ -1082,7 +1082,7 @@ body{
     1vmin = 1% del valor que sea más pequeño del viewport
     1vmax = 1% del valor que sea más grande del viewport
     
-*/
+
 html{
     height: 300px;
 }
@@ -1093,10 +1093,10 @@ body{
 .header{
     background-color: lightskyblue;
     text-align: center;
-    /*height: 100vh; /**Ocupa 100px del area visible sin hacer scroll*/
-    /*width: 100vw; /*! Aparece una barra de scroll horizontal en desktop.*/
-    /*! No usar 100vw, */
-    /**Usar width: 100% si lo necesita*/
+    /*height: 100vh; /**Ocupa 100px del area visible sin hacer scroll
+    /*width: 100vw; /*! Aparece una barra de scroll horizontal en desktop.
+    /*! No usar 100vw, 
+    /**Usar width: 100% si lo necesita
 }
 .box{
     width: 300px;
@@ -1106,13 +1106,13 @@ body{
 }
 .box-hijo{
     position: absolute;
-    /*width: 100vw;*/
+    /*width: 100vw;
     top: 0;
-    width: 50%; /**Cambia con respecto al contenedor*/
-    /*width: 50vw; /**Cambia con respecto al viewport*/
-    /*width: 100vmin; /**El ancho va a tener un minimo de 100% viewport mientras que viewport width sea mas pequeño que viewport height*/
-    /*width:  50vmax; /**El ancho va a tener un maximo de 50% de viewport mientras que el viewport width sea mas grande que viewport height*/
-    /*height: 150px; /**Mientras que el alto siga siendo mas grande que el ancho va a crecer*/
+    width: 50%; /**Cambia con respecto al contenedor
+    /*width: 50vw; /**Cambia con respecto al viewport
+    /*width: 100vmin; /**El ancho va a tener un minimo de 100% viewport mientras que viewport width sea mas pequeño que viewport height
+    /*width:  50vmax; /**El ancho va a tener un maximo de 50% de viewport mientras que el viewport width sea mas grande que viewport height
+    /*height: 150px; 
     width: 50vmin;
     height: 50vmax;
     background-color: lightseagreen;
@@ -1120,5 +1120,59 @@ body{
 /**No es un valor que se escriba en muchos sitios ni que se escriba a la ligera,
 /**Pero segun se vayan haciendo practicas, se va a ver q vmin y vmax nos ayuda ajustar la fuentes en base al tamaño del dispositivo que son mas faciles de calcular que hacer una media query o calcularlo por porcentajes, etc
 
+/**<<<<<<<<<<Limitadores de ancho y alto>>>>>>>>>>>
+Cuando establecemos un width y/o un height con una medida que es relativa,
+es posible que no queramos que se respete esa medida en todos los casos.
+Para ello tenemos propiedades que limitan esas medidas:
+    min-width: Indica el ancho minimo que puede alcanzar el elemento 
+    max-width: Indica el ancho máximo que puede alcanzar el elemento
+    min-height: Indica el alto minimo que puede alcanzar el elemento
+    max-height: Indica el alto máximo que puede alcanazar el elemento
 
-*/
+    
+
+    html{
+        height: 300px;
+    }
+    body{
+        background-color: #333;
+        color: lightcoral;
+    }
+    .header{
+        background-color: lightskyblue;
+        text-align: center;
+    }
+    .box{
+        /**min-width y max-width es util para hacer responsive
+        max-width: 600px; /**Crece hasta 600px
+        min-width: 500px; /**Decrece hasta 500px y aparece la barra de scroll
+        height: 60vw; /**El alto va a tener 60% del ancho
+        background-color: lightgreen;
+        /**Estos 2 no se usan casi
+        max-height: 300px;
+        min-height: 100px;
+    }*/
+
+    body{
+        position: relative; /**Debemos posicionar los elementos del body para que tome el absolute de los elementos hijo*/
+        background-color: #333;
+        color: lightcoral;
+        min-height: 100vh; /**Para que el body utilice el alto del viewport, y llegue a la parte inferior como minimo*/
+        border: 4px solid red;
+    }
+    p{
+        margin: 0;
+    }
+    .footer{
+        position:absolute;
+        bottom: 0; /**! No funciona cuando hacemos scroll con el position absolute y bottom 0*/
+        width: 100%;
+        padding: 1rem 0;
+        color: white;
+        text-align: center;
+        background-color: lightseagreen;
+    }
+/**No es porque dorian lo ponga yo lo ponga siempre
+
+/**Esto es un truco para que se quiera tener un elemento en la parte inferior de la pagina y el contenido no rellene todo, se pueda utilizar*/
+
