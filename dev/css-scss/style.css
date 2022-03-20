@@ -1209,6 +1209,43 @@ body{
 currentColor: Es una propiedad clave que se puede usar en lugar de cualquier valor
 de color y usará el valor ya sea establecido o heredado en la propiedad color.
 
+
+
+body{
+    background-color: mediumorchid;
+    color: #333;
+}
+.main{
+    color: aquamarine; /**Cuando se agg color a la caja, y se da bgc color, el contexto lo agarra del elemento, no del body
+    /*background-color: currentColor; /**Coge la propiedad valor del color heredado del body, si la caja tiene color hereda del mismo al bgc-color, y si no hay ninguno declarado, agarra el negro por defecto
+    /*background-color: inherit; /**Esta heredando la propeidad background-color (Es el mismo que tiene declarado del body)
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    border: 2px solid currentColor; /**Hereda el color del main, si no se le da color, el borde lo hereda, es indiferente poner currentColor en esos casos
+}
+/**Al dia de hoy no se usa tanto currentColor, porque se usan variables en CSS, pero si una variable en CSS no lo soporta un navegador, usar currentColor
+
+/**<<<<<<<<<<RGB/RGBA>>>>>>>>>>>
+
+En el modo RGB tenemos 3 canales (Red, Green, Blue) y tenemos 8 bits de color por canal, 
+(cada bit tiene 2 posibles valores 0 o 1) Lo que significa que tenemos 2^8 posibles valores, que van desde 0 hasta 255.
+
+    Esto nos da un total de 255 * 255 * 255 = 16.581.375
+
+    Su sintaxis es rgb(R,G,B)
+
+    Si ponemos todos los canales a 0 tendremos un negro puro y si los ponemos a 255 tenedremos el blanco.
+
+    Para movernos por la gama de grises debemos poner los 3 canales con el mismo valor, si ponemos los 3 canales a 128 tendremos el gris puro.
+
+    El modo RGB nos da la opción de utilizar un 4to canbal que correspodería al canal alpha, es decir, la transparente, y su valor va desde 0 a 1. Tenemos sintaxis para utilizar el canal alpha
+    rgba(red, green, blue, alpha)
+    rgb(red green blue / alpha)
+
+
 */
 
 body{
@@ -1216,14 +1253,11 @@ body{
     color: #333;
 }
 .main{
-    color: aquamarine; /**Cuando se agg color a la caja, y se da bgc color, el contexto lo agarra del elemento, no del body*/
-    /*background-color: currentColor; /**Coge la propiedad valor del color heredado del body, si la caja tiene color hereda del mismo al bgc-color, y si no hay ninguno declarado, agarra el negro por defecto*/
-    /*background-color: inherit; /**Esta heredando la propeidad background-color (Es el mismo que tiene declarado del body)*/
+    margin: 10px 0 0 10px; 
 }
 .box{
     width: 200px;
     height: 200px;
     background-color: lightcoral;
-    border: 2px solid currentColor; /**Hereda el color del main, si no se le da color, el borde lo hereda, es indiferente poner currentColor en esos casos*/
+    box-shadow: 5px 5px 10px rgba(0 0 0 / .5);
 }
-/**Al dia de hoy no se usa tanto currentColor, porque se usan variables en CSS, pero si una variable en CSS no lo soporta un navegador, usar currentColor*/
