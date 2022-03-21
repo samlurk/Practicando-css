@@ -1,4 +1,4 @@
-/**LA REGLA @IMPORT NO UTILIZARLA NUNCA*/
+/**LA REGLA @IMPORT NO UTILIZARLA NUNCA
 
 /**<<<<<<SINTAXIS DE CSS>>>>>>
 
@@ -1395,11 +1395,29 @@ body{
 /**<<<<<<<<<<GOOGLE FONTS>>>>>>>>>>>
 Fuentes desde un servidor remoto, son fuentes que se encontran en un servidor y que nosotros descargamos para su uso,
 la más famosa es Google Fonts
+
+
+body{
+    background-color: #333;
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif; /**Si Roboto no carga, usa sans-serif | Usar 1 fuente como lo normal, o 2 como max
+    /**Utilizar un link de fuente | Si se va utilizar un bold utilizar el fondo que se requiere
+}
+
+/**<<<<<<<<<<GOOGLE ICONS>>>>>>>>>>>
+Nota: Si se va a usar una cantidad de inocnos en la web, compensar usando la libería remota
+Si solo se usará unos pocos es mejor descargarlos en formato svg y utilizarlos como imágenes
 */
 
 body{
     background-color: #333;
     color: aliceblue;
-    font-family: 'Roboto', sans-serif; /**Si Roboto no carga, usa sans-serif | Usar 1 fuente como lo normal, o 2 como max*/
-    /**Utilizar un link de fuente | Si se va utilizar un bold utilizar el fondo que se requiere*/
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon{
+    font-size: 5rem;
+    color: initial;
+    filter: invert(1) /**Propiedad de css invierte el color*/
+    /**Propiedad fill, para svg, para cambiarle el color a los svg*/
 }
